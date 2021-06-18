@@ -5,6 +5,12 @@
  */
 int main(void)
 {
+	char charType;
+	int intType;
+	long longType;
+	double doubleType;
+	float floatType;
+
 	printf("Size of a char: %zu byte(s)", sizeof(charType));
 	printf("Size of an int: %zu byte(s)", sizeof(intType));
 	printf("Size of a long int: %zu byte(s)", sizeof(longType));
