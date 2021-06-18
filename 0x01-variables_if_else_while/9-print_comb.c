@@ -5,15 +5,19 @@
  */
 int main(void)
 {
-	int a, b;
+	int a;
 
 	for (a = 0; a <= 9; a++)
 	{
-		for (b = 0; b <= 9; b++)
+		putchar(a + '0');
+		if (a == 9)
 		{
-			putchar(a + '0');
-			putchar(b + '0');
+			continue;
+		} else
+		{
+			putchar(',');
 		}
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
