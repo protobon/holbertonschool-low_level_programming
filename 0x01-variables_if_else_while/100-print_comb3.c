@@ -9,8 +9,6 @@ int main(void)
 
 	for (a = 0; a <= 9; a++)
 	{
-		int c = a + 1;
-
 		for (b = 0; b <= 9; b++)
 		{
 			if (a >= b)
