@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints every possible combination between two digits
+ * main - prints every possible different combination between three digits
  * Return: returns 0
  */
 int main(void)
