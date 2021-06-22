@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <holberton.h>
 
 /**
  * main - prints 'Holberton' on screen
@@ -6,6 +6,6 @@
  */
 int main(void)
 {
-	printf("Holberton\n");
+	_putchar("Holberton\n");
 	return (0);
 }
