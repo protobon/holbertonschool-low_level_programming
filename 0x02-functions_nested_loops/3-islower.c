@@ -2,6 +2,7 @@
 
 /**
  * _islower - if input is lowercase prints 1, prints 0 otherwise
+ * @c:character
  * Return: returns either 1 or 0 depending on input
  */
 
