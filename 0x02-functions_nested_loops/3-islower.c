@@ -1,20 +1,20 @@
 #include "holberton.h"
 
 /**
- *
- *
+ * _islower - if input is lowercase prints 1, prints 0 otherwise
+ * Return: returns either 1 or 0 depending on input
  */
 
 int _islower(int c)
 {
 	int i;
 
-	if (i >= 97 && i <= 122)
+	if (c >= 97 && c <= 122)
 	{
-		_putchar('1');
+		i = 1;
 	} else
 	{
-		_putchar('0');
+		i = 0;
 	}
 	return (i);
 }
