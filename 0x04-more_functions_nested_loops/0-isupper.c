@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _isupper - checks if input is an uppercase character
  * @c: character
