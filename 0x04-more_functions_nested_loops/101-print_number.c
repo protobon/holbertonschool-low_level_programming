@@ -6,25 +6,15 @@
  */
 void print_number(int n)
 {
+	unsigned int x = n;
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		x = -x;
 	}
-	if (n > 999)
+	if (x > 9)
 	{
-		_putchar(((n / 1000) % 10) + '0');
-		_putchar(((n / 100) % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-	}
-	else if (n > 99)
-	{
-		_putchar(((n / 100) % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-	}
-	else if (n > 9)
-	{
-		_putchar((n / 10) + '0');
+		_putchar((x / 10) + '0');
 	}
 	_putchar((n % 10) + '0');
 }
