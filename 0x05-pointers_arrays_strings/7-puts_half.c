@@ -13,7 +13,6 @@ void puts_half(char *str)
 		j++;
 	}
 
-	j -= 1;
 	j = j / 2;
 
 	for (; str[j] != '\0'; j++)
