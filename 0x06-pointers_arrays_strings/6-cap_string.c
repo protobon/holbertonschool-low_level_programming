@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * cap_string - capitalizes every word of a string
  * @s: string
@@ -18,7 +19,7 @@ char *cap_string(char *s)
 				{
 					s[i] = 32;
 				}
-				if (s[i + 1] >= 97 && s[i + 1] <= 122)
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 				{
 					s[i + 1] -= 32;
 				}
