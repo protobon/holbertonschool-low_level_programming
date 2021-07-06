@@ -6,23 +6,13 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i = 0, da, db;
-	int *p;
+	int i = 0, da = 0, db = 0;
 
-	p = a;
 	for (; i < size; i++)
 	{
-		da += *p;
-		p += size + 1;
+		da += a[(size + 1) * i];
+		db += a[(size - 1) * (i + 1)];
 	}
-	p = a + size - 1;
-	i = 0;
-	for (; i < size; i++)
-	{
-		db += *p;
-		p += size - 1;
-	}
+
 	printf("%d, %d\n", da, db);
-	da = 0;
-	db = 0;
 }
