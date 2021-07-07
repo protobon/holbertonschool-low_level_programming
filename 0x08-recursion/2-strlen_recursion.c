@@ -1,6 +1,7 @@
 /**
  * _strlen_recursion - calculates the length of a string
  * @s: string
+ * Return: int
  */
 int _strlen_recursion(char *s)
 {
