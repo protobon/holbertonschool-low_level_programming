@@ -1,6 +1,7 @@
 /**
  * end_of_string - moves pointer to the end of string
  * @s: string
+ * Return: 0
  */
 int end_of_string(char *s)
 {
@@ -15,6 +16,8 @@ int end_of_string(char *s)
 /**
  * check - checks if a string is a palindrome
  * @s: string
+ * @i: int
+ * @j: int
  * Return: int
  */
 int check(char *s, int i, int j)
