@@ -3,6 +3,8 @@
 
 /**
  * main - prints the programs name
+ * @argc: int
+ * @argv: array of strings
  * Return: 0
  */
 int main(int argc __attribute__ ((unused)), char *argv[])
