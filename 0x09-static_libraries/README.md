@@ -1,1 +1,1 @@
-his repo is all about static libs
+Project 0x09 C - Static libraries
