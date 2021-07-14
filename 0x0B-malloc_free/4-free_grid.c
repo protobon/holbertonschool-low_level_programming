@@ -3,7 +3,7 @@
 
 /**
  * free_grid - frees a 2 dimensional grid
- * @grid: 2 dim array
+ * @grid: pointer to 2 dim array
  * @height: int
  */
 void free_grid(int **grid, int height)
