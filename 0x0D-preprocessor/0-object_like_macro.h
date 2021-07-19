@@ -1,3 +1,4 @@
-#ifndef SIZE
+#ifndef ZERO_OBJECT_LIKE_MACRO
+#define ZERO_OBJECT_LIKE_MACRO
 #define SIZE 1024
 #endif
