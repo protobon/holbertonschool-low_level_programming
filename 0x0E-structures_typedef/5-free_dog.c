@@ -7,11 +7,12 @@
  */
 void free_dog(dog_t *d)
 {
-	char *p;
+	dog_t *p = d;
 
-	p = d->name;
-	free(p);
-	p = d->owner;
-	free(p);
-	free(d);
+	if (d)
+	{
+		free(p->name);
+		free(p->owner);
+		free(p);
+	}
 }
