@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /**
  * print_name - prints name
  * @name: string, name
