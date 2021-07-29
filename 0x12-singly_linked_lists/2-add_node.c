@@ -18,7 +18,8 @@ list_t *add_node(list_t **head, const char *str)
 	if (ptr && head)
 	{
 		ptr->str = scopy;
-		ptr->len = strlen(scopy);
+		if (scopy)
+			ptr->len = strlen(scopy);
 		ptr->next = *head;
 		*head = ptr;
 	}
