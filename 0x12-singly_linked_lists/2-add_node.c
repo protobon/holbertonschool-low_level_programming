@@ -3,10 +3,10 @@
 #include <stdlib.h>
 /**
   * add_node - adds a new node at the beginning of list
-  * @head: pointer to new node
-  * @str: pointer to string within node
-  * Return: pointer to head of list
-  */
+  * @head: pointer to address of previous list
+  * @str: pointer to new string
+  * Return: pointer to new node
+ */
 list_t *add_node(list_t **head, const char *str)
 {
 	char *scopy = NULL;
