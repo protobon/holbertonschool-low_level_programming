@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
-  * create_node - creates new listint_t node
+  * create_nodeint - creates new listint_t node
   * @n: data of new node
   * Return: pointer to new node
   */
