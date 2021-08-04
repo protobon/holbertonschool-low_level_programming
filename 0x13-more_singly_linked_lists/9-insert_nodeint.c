@@ -50,7 +50,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		new = create_nodeint(n);
 		if (!new)
 			return (NULL);
-		new->next = get_nodeint_at_index(*head, idx);
+		new->next = get_nodeint_at_index(*head, idx + 1);
 		if (!idx)
 			*head = new;
 		else
