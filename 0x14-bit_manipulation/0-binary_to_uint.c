@@ -7,19 +7,21 @@
   */
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0, len = 0;
+	int len = 0;
 	unsigned int sum = 0, p = 1;
 
-	len = strlen(b);
-	if (!b || !len)
+	if (!b)
 		return (sum);
-	for (i = len - 1; i >= 0; i--, p *= 2)
+
+	len = strlen(b);
+
+	for (len--; len >= 0; len--, p *= 2)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[len] != '0' && b[len] != '1')
 		{
 			return (0);
 		}
-		if (b[i] == '1')
+		if (b[len] == '1')
 			sum += p;
 	}
 	return (sum);
