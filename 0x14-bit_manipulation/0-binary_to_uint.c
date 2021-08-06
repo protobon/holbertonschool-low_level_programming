@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int sum = 0, p = 1;
 
 	len = strlen(b);
-	if (!b)
+	if (!b || !len)
 		return (sum);
 	for (i = len - 1; i >= 0; i--, p *= 2)
 	{
