@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
   * get_bit - gets the value of a bit at given index
   * @n: decimal number, input
@@ -12,8 +10,6 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (n == 0)
 		return (0);
-	if (index == 0)
-		return (n & 1);
 	while (i < index && n)
 	{
 		n = n >> 1;
