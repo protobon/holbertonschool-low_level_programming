@@ -1,25 +1,5 @@
 #include "lists.h"
-
-/**
-  * get_dnodeint_at_index - gets node of dlistint at idx
-  * @head: head of list
-  * @index: index node
-  * Return: address of node at index
-  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
-{
-	dlistint_t *tmp = head;
-	unsigned int i = 0;
-
-	if (index == 0)
-		return (head);
-	while (i < index && tmp)
-	{
-		i++;
-		tmp = tmp->next;
-	}
-	return (tmp);
-}
+#include "5-get_dnodeint.c"
 
 /**
   * insert_dnodeint_at_index - inserts new node at given idx
@@ -31,7 +11,16 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *tmp = *h, *new = NULL;
+	unsigned int count = 0;
 
+	while (tmp)
+	{
+		tmp = tmp->next;
+		count++;
+	}
+	if (idx > count)
+		return (NULL);
+	tmp = *h;
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (NULL);
