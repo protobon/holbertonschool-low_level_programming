@@ -1,5 +1,4 @@
 #include "lists.h"
-#include "5-get_dnodeint.c"
 
 /**
   * insert_dnodeint_at_index - inserts new node at given idx
@@ -13,40 +12,35 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *tmp = *h, *new = NULL;
 	unsigned int count = 0;
 
-	while (tmp)
-	{
-		tmp = tmp->next;
-		count++;
-	}
-	if (idx > count)
-		return (NULL);
-	tmp = *h;
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (NULL);
-
 	new->n = n;
 	new->next = NULL;
 	new->prev = NULL;
-	tmp = get_dnodeint_at_index(*h, idx);
-	if (tmp == *h)
+
+	if (idx == 0)
 	{
-		tmp->prev = new;
-		new->next = tmp;
-		*h = new;
+		free(new);
+		return (add_dnodeint(h, n));
 	}
-	if (tmp->next == NULL)
+
+	while (tmp)
 	{
-		tmp->prev->next = new;
-		new->prev = tmp->prev;
-		new->next = tmp;
+		if (idx == count)
+		{
+			new->next = tmp;
+			new->prev = tmp->prev;
+			tmp->prev = new;
+			new->prev->next = new;
+		}
+		tmp = tmp->next;
+		count++;
 	}
-	if (tmp->prev)
+	if (idx == count)
 	{
-		tmp->prev->next = new;
-		new->prev = tmp->prev;
-		new->next = tmp;
-		tmp->prev = new;
+		free(new);
+		return (add_dnodeint_end(h, n));
 	}
 	return (new);
 }
