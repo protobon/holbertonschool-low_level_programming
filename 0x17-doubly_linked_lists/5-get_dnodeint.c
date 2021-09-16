@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-  * get_nodeint_at_index - gets node of dlistint at idx
+  * get_dnodeint_at_index - gets node of dlistint at idx
   * @head: head of list
   * @index: index node
   * Return: address of node at index
