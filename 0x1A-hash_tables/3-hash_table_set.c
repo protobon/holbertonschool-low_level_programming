@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht)
 		return (0);
-	if (!key || strlen(key) == 0)
+	if (!key || strlen(key) == 0 || !value)
 		return (0);
 	if (!new)
 		return (0);
