@@ -32,6 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (1);
 		}
 		new->next = ht->array[idx];
+		ht->array[idx] = new;
 	}
 	else
 		new->next = NULL;
