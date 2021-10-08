@@ -12,12 +12,18 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	char *value;
 	hash_node_t *tmp;
 
+	if (!ht)
+		return (NULL);
+
 	idx = key_index((const unsigned char *)key, ht->size);
+
 	if (ht->array[idx] == NULL)
 		return (NULL);
+
 	tmp = ht->array[idx];
 	while (tmp->key != key)
 		tmp = tmp->next;
 	value = strdup(tmp->value);
+
 	return (value);
 }
