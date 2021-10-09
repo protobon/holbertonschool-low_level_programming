@@ -1,6 +1,30 @@
 #include "hash_tables.h"
 
 /**
+  * insert_node - inserts a new node to hash table
+  * @k: key of new node
+  * @v: value of new node
+  * Return: new node, or NULL if failed
+  */
+hash_node_t *insert_node(hash_node_t **h, const char *k, const char *v)
+{
+	hash_node_t *new = NULL;
+
+	if (!h)
+		return (NULL);
+	new = malloc(sizeof(hash_node_t));
+	if (!new)
+		return (NULL);
+	new->key = strdup(k);
+	if (v)
+		new->value = strdup(v);
+	new->next = *h;
+	*h = new;
+
+	return (new);
+}
+
+/**
   * hash_table_set - adds an element to the hash table
   * @ht: hash table to add or update element
   * @key: key of element, str, can't be empty
@@ -10,34 +34,30 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
-	hash_node_t *new = NULL;
+	hash_node_t *tmp = NULL;
 
-	if (!ht)
-		return (0);
-	if (!key || strlen(key) == 0 || !value)
+	if (!ht || !key || strlen(key) == 0 || !value)
 		return (0);
 
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
-
-	new->key = strdup(key);
-	new->value = strdup(value);
-
-	idx = key_index((unsigned char *)key, ht->size);
+	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx] != NULL)
 	{
-		if (strcmp(ht->array[idx]->key, key) == 0)
+		tmp = ht->array[idx];
+		while (tmp)
 		{
-			free(new);
-			ht->array[idx]->value = strdup(value);
-			return (1);
+			if (strcmp(tmp->key, key) == 0)
+			{
+				free(tmp->value);
+				tmp->value = strdup(value);
+				return (1);
+			}
+			tmp = tmp->next;
 		}
-		new->next = ht->array[idx];
 	}
 	else
-		new->next = NULL;
-
-	ht->array[idx] = new;
+	{
+		if (!insert_node(&(ht->array[idx]), key, value))
+			return (0);
+	}
 	return (1);
 }
