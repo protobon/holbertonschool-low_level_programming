@@ -17,8 +17,7 @@ hash_node_t *insert_node(hash_node_t **h, const char *k, const char *v)
 	if (!new)
 		return (NULL);
 	new->key = strdup(k);
-	if (v)
-		new->value = strdup(v);
+	new->value = strdup(v);
 	new->next = *h;
 	*h = new;
 
@@ -54,11 +53,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			tmp = tmp->next;
 		}
+		if (!tmp)
+		{
+			if (!insert_node(&(ht->array[idx]), key, value))
+				return (0);
+			else
+				return (1);
+		}
 	}
-	else
-	{
-		if (!insert_node(&(ht->array[idx]), key, value))
-			return (0);
-	}
+	if (!insert_node(&(ht->array[idx]), key, value))
+		return (0);
 	return (1);
 }
