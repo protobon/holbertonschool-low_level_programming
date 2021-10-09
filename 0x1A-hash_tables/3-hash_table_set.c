@@ -2,6 +2,7 @@
 
 /**
   * insert_node - inserts a new node to hash table
+  * @h: pointer to hash_table node
   * @k: key of new node
   * @v: value of new node
   * Return: new node, or NULL if failed
