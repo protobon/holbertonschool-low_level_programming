@@ -164,7 +164,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
-  * shash_table_print - prints a hash table
+  * shash_table_print - prints sorted elements from a ht
   * @ht: hash table to print
   */
 void shash_table_print(const shash_table_t *ht)
@@ -177,7 +177,7 @@ void shash_table_print(const shash_table_t *ht)
 		putchar('{');
 		while (tmp)
 		{
-			printf("\'%s\': \'%s\'", tmp->key, tmp->value);
+			printf("'%s': '%s'", tmp->key, tmp->value);
 			if (tmp->snext)
 				printf(", ");
 			tmp = tmp->snext;
@@ -187,8 +187,9 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
-* shash_table_print_rev - Prints a sorted hash table in reverse order.
-* @ht: sorted hash table.
+* shash_table_print_rev - prints sorted elements from
+* ht in reverse order
+* @ht: hash table.
 */
 void shash_table_print_rev(const shash_table_t *ht)
 {
@@ -200,7 +201,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 		putchar('{');
 		while (tmp)
 		{
-			printf("\'%s\': \'%s\'", tmp->key, tmp->value);
+			printf("'%s': '%s'", tmp->key, tmp->value);
 			if (tmp->sprev)
 				printf(", ");
 			tmp = tmp->sprev;
