@@ -8,15 +8,15 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) -f *~ $(NAME)
+	$(RM) -f $(wildcard *~) $(NAME)
 
 oclean:
 	$(RM) -f $(OBJ)
 
 fclean:
-	clean
-	oclean
+	$(RM) -f $(wildcard *~) $(NAME)
+	$(RM) -f $(OBJ)
 
 re:
-	fclean
-	all
+	$(RM) -f $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
