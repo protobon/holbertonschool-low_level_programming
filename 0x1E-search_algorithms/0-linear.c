@@ -1,8 +1,12 @@
 #include "search_algos.h"
 
 /**
+ * linear_search - linear search algorithm for arrays
  * 
- * 
+ * @array: pointer to array
+ * @size: size of array
+ * @value: value to look for
+ * @return int, index of value, -1 if fail
  */
 int linear_search(int *array, size_t size, int value)
 {
